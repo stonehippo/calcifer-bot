@@ -53,8 +53,9 @@ arduino-cli compile -b esp8266:esp8266:huzzah:xtal=160 -u -p [your device's port
 
 I implemented my bot with the following components:
 
-- [Adafruit ESP8266 Huzzah breakout board](https://www.adafruit.com/product/2471)
-- [Micro servo](https://www.adafruit.com/product/169)
+- [Adafruit ESP8266 Huzzah breakout board](https://www.adafruit.com/product/2471) - the brains of the operation
+- [Micro servo](https://www.adafruit.com/product/169) - Drives calcifer-bot's arm
+- [Red Candle Flicker LED](https://shop.evilmadscientist.com/productsmenu/partsmenu/576) - for ambiance! Oh, as indicates status, I suppose
 
 If building this yourself, you can substitute pretty much any ESP8266 board out there, except perhaps the early ESP-01, which typically had only 512KB of RAM. You could also use just about any standard RC hobby servo.
 

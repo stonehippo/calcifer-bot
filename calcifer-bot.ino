@@ -5,10 +5,11 @@
 #include "wifi_config.h"
 
 #define SERVO			12
+#define LED				14
 
 // Set the position for calcifer-bot's "finger" (as degrees)
 #define PRESS			80		// finger pushing down (goes past 90 to ensure downward pressure)
-#define RELEASE		180		// finger sticking up
+#define RELEASE			180		// finger sticking up
 
 #define	PRESS_DURATION	3000	// time to hold button, in milliseconds
 
@@ -18,22 +19,27 @@ const char *password = MY_PASSWORD;
 Servo servo;
 
 int servo_angle = 0;
+bool should_enable_led = false;
 
 extern "C" homekit_server_config_t config;
 extern "C" homekit_characteristic_t characteristic_on;
 
 
 void setup() {
+	pinMode(LED, OUTPUT);
+	
 	// connect to the servo and set it to the default position
 	servo.attach(SERVO);
 	finger_up();
 	
 	wifi_connect();
+	
 	calcifer_homekit_setup();
 }
 
 void loop() {
 	calcifer_homekit_loop();
+	led_setter();
 	delay(10);
 }
 
@@ -51,6 +57,7 @@ void wifi_connect() {
 
 void characteristic_on_setter(const homekit_value_t value) {
 	bool on = value.bool_value;
+	should_enable_led = on;
 	characteristic_on.value.bool_value = on;
 	press();
 }
@@ -76,4 +83,12 @@ void press() {
 	finger_down();
 	delay(PRESS_DURATION);
 	finger_up();
+}
+
+void led_setter() {
+	if (should_enable_led) {
+		digitalWrite(LED, HIGH);
+	} else {
+		digitalWrite(LED, LOW);
+	}
 }
