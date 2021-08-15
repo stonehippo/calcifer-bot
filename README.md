@@ -34,7 +34,7 @@ cd [path to where you cloned it]/calcifer-bot/
 arduino-cli compile -b esp8266:esp8266:huzzah:xtal=160
 ```
 
-Note that the board fully qualified name includes the parameters to run the ESP8266 at 160MHz. This is important, because without it the HomeKit crypto will probably cause timeout when running at the default 80MHz. If you're using the Arduino IDE to compile this firmware, make sure to select 
+Note that the board fully qualified name includes the parameters to run the ESP8266 at 160MHz. This is important, because without it the HomeKit crypto will probably cause timeout when running at the default 80MHz. If you're using the Arduino IDE to compile this firmware, make sure to select the 160MHz frequency (see the Arduino-Homekit-ESP8266 README for full details on recommended Arduino IDE/CLI settings).
 
 To upload the code once built, first put the device in bootloader mode (on the Huzzah, this means holding down the GPIO0 button while pressing the RESET button; other devices, such as the Adafruit Feather ESP8266 Huzzah, may not require this). Then run:
 
