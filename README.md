@@ -34,12 +34,12 @@ cd [path to where you cloned it]/calcifer-bot/
 arduino-cli compile -b esp8266:esp8266:huzzah:xtal=160
 ```
 
-Note that the board fully qualified name includes the parameters to run the ESP8266 at 160MHz. This is important, because without it the HomeKit crypto will probably cause timeout when running at the default 80MHz. If you're using the Arduino IDE to compile this firmware, make sure to select the 160MHz frequency (see the Arduino-Homekit-ESP8266 README for full details on recommended Arduino IDE/CLI settings).
+Note that the board fully qualified name includes the parameters to run the ESP8266 at 160MHz. This is important, because without it the HomeKit crypto will probably cause timeouts when running at the default 80MHz. If you're using the Arduino IDE to compile this firmware, make sure to select the 160MHz frequency (see the Arduino-Homekit-ESP8266 README for full details on recommended Arduino IDE/CLI settings).
 
 To upload the code once built, first put the device in bootloader mode (on the Huzzah, this means holding down the GPIO0 button while pressing the RESET button; other devices, such as the Adafruit Feather ESP8266 Huzzah, may not require this). Then run:
 
 ```
-arduino-cli upload -b esp8266:esp8266:huzzah:xtal=160 -p [your device's port]
+arduino-cli upload . -b esp8266:esp8266:huzzah:xtal=160 -p [your device's port]
 
 ```
 
@@ -61,9 +61,9 @@ If building this yourself, you can substitute pretty much any ESP8266 board out 
 
 # Configuring with HomeKit
 
-First, power on make the device and wait a minute or so while it connects to your Wifi.
+First, power on the device and wait a minute or so while it connects to your Wifi.
 
-Next, make sure that your iOS device (iPad or iPhone) is connected to the same 2.4GHz WiFi network as the bot. In my case, I had to switch my phone from the default 5GHz.
+Next, **make sure that your iOS device (iPad or iPhone) is connected to the same 2.4GHz WiFi network as the bot**. If you don't do this, you might still see the device, but set up won't complete. In my case, I had to switch my phone from the default 5GHz.
 
 Open the Home app, and click the `+` button at the top of the view, then select **Add Accessory**. In the dialog, select `I Don't Have a Code or Cannot Scan`. The app will scan for your device, and when it's shown, tap on it. You'll be prompted to enter a code; by default it is '021-40-210'. You should then be asked how you'd like the device to be presented: I choose Switch. You also get to select which room the device appears in.
 
