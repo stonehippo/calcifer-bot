@@ -55,7 +55,7 @@ I implemented my bot with the following components:
 
 - [Adafruit ESP8266 Huzzah breakout board](https://www.adafruit.com/product/2471) - the brains of the operation
 - [Micro servo](https://www.adafruit.com/product/169) - Drives calcifer-bot's arm
-- [Red Candle Flicker LED](https://shop.evilmadscientist.com/productsmenu/partsmenu/576) - for ambiance! Oh, as indicates status, I suppose
+- [Red Candle Flicker LED](https://shop.evilmadscientist.com/productsmenu/partsmenu/576) - for ambiance! Oh, also indicates status, I suppose
 
 If building this yourself, you can substitute pretty much any ESP8266 board out there, except perhaps the early ESP-01, which typically had only 512KB of RAM. You could also use just about any standard RC hobby servo.
 
@@ -67,4 +67,4 @@ Next, **make sure that your iOS device (iPad or iPhone) is connected to the same
 
 Open the Home app, and click the `+` button at the top of the view, then select **Add Accessory**. In the dialog, select `I Don't Have a Code or Cannot Scan`. The app will scan for your device, and when it's shown, tap on it. You'll be prompted to enter a code; by default it is '021-40-210'. You should then be asked how you'd like the device to be presented: I choose Switch. You also get to select which room the device appears in.
 
-Once that's done, you should be able to control the device with On and Off states in the home app, or control it with Siri with commands like "Hy Siri, turn on Calcifer!".
+Once that's done, you should be able to control the device with On and Off states in the home app, or control it with Siri with commands like "Hey Siri, turn on Calcifer!".
