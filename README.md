@@ -7,7 +7,7 @@ If you want to read a bit about why I built this, and how the build went, check 
 ## Dependencies
 
 - [Arduino ESP8266 Core](https://github.com/esp8266/Arduino)
-- [Arduino Servo Libary](https://github.com/arduino-libraries/Servo)
+- [Arduino Servo Library](https://github.com/arduino-libraries/Servo)
 - [Arduino-HomeKit-ESP8266](https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266)
 
 You'll need [the Arduino IDE](https://www.arduino.cc/en/software) or [Arduino CLI](https://arduino.github.io/arduino-cli/latest/). I prefer the Arduino CLI these days, but either will work.
